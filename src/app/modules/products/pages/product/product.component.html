@@ -1,0 +1,14 @@
+
+<div class="group rounded-lg border overflow-hidden">
+  <a [routerLink]="['/product', product.id]" class="block bg-gray-200 rounded-t-lg overflow-hidden">
+    <img src="{{imgPro ? imgPro : imgAlt}}" [alt]="product.title" class="object-cover object-center w-full h-60 transition-opacity duration-300 group-hover:opacity-75">
+  </a>
+  <div class="flex flex-col justify-between p-4">
+    <div>
+      <h3 class="text-sm text-gray-700">{{ product.title | uppercase  }}</h3>
+      <p class="text-lg font-medium text-gray-900">{{ product.price | currency }}</p>
+      <p class="text-sm font-medium text-gray-500">{{ product.creationAt | timeAgo }}</p>
+    </div>
+    <button class="mt-2 bg-cyan-600 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-600" (click)="addToCartHandler()">Añadir al carrito</button>
+  </div>
+</div>
